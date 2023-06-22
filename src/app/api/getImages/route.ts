@@ -3,6 +3,9 @@ export async function GET(request: Request) {
     "https://ai-image-generator-yosua.azurewebsites.net/api/getimages",
     {
       cache: "no-store",
+      next: {
+        revalidate: 10,
+      },
     }
   );
 
@@ -15,3 +18,5 @@ export async function GET(request: Request) {
     status: 200,
   });
 }
+
+export const revalidate = 10;
