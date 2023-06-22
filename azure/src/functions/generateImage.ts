@@ -48,7 +48,7 @@ export async function generateImage(
   try {
     await blockBlobClient.uploadData(arrayBuffer);
     console.log("uploadData success");
-  } catch (err) {
+  } catch (err: any) {
     console.log(err.message);
   }
 
